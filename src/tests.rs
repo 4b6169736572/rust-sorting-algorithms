@@ -1,7 +1,9 @@
 #[cfg(test)]
 mod tests {
 
-    use crate::{bubble_sort::bubble_sort, selection_sort::selection_sort};
+    use crate::{
+        bubble_sort::bubble_sort, insertion_sort::insertion_sort, selection_sort::selection_sort,
+    };
 
     #[test]
     fn bubble_two_one() {
@@ -48,6 +50,27 @@ mod tests {
     fn selection_sort_one() {
         let mut input = [1];
         selection_sort(&mut input);
+        assert_eq!(input, [1]);
+    }
+
+    #[test]
+    fn insertion_sort_two_one() {
+        let mut input = [2, 1];
+        insertion_sort(&mut input);
+        assert_eq!(input, [1, 2]);
+    }
+
+    #[test]
+    fn insertion_sort_reversed() {
+        let mut input = [5, 4, 3, 2, 1];
+        insertion_sort(&mut input);
+        assert_eq!(input, [1, 2, 3, 4, 5]);
+    }
+
+    #[test]
+    fn insertion_sort_one() {
+        let mut input = [1];
+        insertion_sort(&mut input);
         assert_eq!(input, [1]);
     }
 }
