@@ -5,6 +5,7 @@ mod tests {
         bubble_sort::bubble_sort, insertion_sort::insertion_sort, selection_sort::selection_sort,
     };
 
+    // Bubble sort
     #[test]
     fn bubble_two_one() {
         let mut input = [2, 1];
@@ -32,6 +33,7 @@ mod tests {
         assert_eq!(input, [1]);
     }
 
+    // Selection sort
     #[test]
     fn selection_sort_two_one() {
         let mut input = [2, 1];
@@ -47,12 +49,20 @@ mod tests {
     }
 
     #[test]
+    fn selection_sort_equal() {
+        let mut input = [1, 1, 1, 1, 1];
+        selection_sort(&mut input);
+        assert_eq!(input, [1, 1, 1, 1, 1]);
+    }
+
+    #[test]
     fn selection_sort_one() {
         let mut input = [1];
         selection_sort(&mut input);
         assert_eq!(input, [1]);
     }
 
+    // Insertion sort
     #[test]
     fn insertion_sort_two_one() {
         let mut input = [2, 1];
@@ -68,12 +78,16 @@ mod tests {
     }
 
     #[test]
+    fn insertion_sort_equal() {
+        let mut input = [1, 1, 1, 1, 1];
+        insertion_sort(&mut input);
+        assert_eq!(input, [1, 1, 1, 1, 1]);
+    }
+
+    #[test]
     fn insertion_sort_one() {
         let mut input = [1];
         insertion_sort(&mut input);
         assert_eq!(input, [1]);
     }
 }
-
-
-
