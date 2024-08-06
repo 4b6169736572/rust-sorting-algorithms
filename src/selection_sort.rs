@@ -1,5 +1,3 @@
-use std::ptr;
-
 pub fn selection_sort<T: PartialOrd>(input: &mut [T]) {
     let len = input.len();
 
@@ -23,9 +21,7 @@ pub fn selection_sort<T: PartialOrd>(input: &mut [T]) {
         }
 
         if swapped {
-            unsafe {
-                ptr::swap(&mut input[min] as *mut T, &mut input[start] as *mut T);
-            }
+            input.swap(min, start);
         }
     }
 }

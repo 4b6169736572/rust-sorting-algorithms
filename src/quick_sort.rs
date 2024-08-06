@@ -1,4 +1,4 @@
-pub fn quick_sort<T: PartialOrd + std::fmt::Debug>(input: &mut [T]) {
+pub fn quick_sort<T: PartialOrd>(input: &mut [T]) {
     let len = input.len();
     if len < 2 {
         return;
@@ -13,7 +13,7 @@ pub fn quick_sort<T: PartialOrd + std::fmt::Debug>(input: &mut [T]) {
     let (pivot, rest) = input.split_first_mut().unwrap();
 
     // Indeces of first and last elements, elements outside of these (further away from the middle)
-    // are in the respective side. So left=2 implies [..2] < pivot.
+    // are in the respective side. So left=2 implies f.a. [..2] < pivot.
     let mut left = 0;
     let mut right = rest.len() - 1;
 
