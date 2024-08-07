@@ -6,11 +6,9 @@ pub fn insertion_sort<T: PartialOrd + Clone>(input: &mut [T]) {
     }
 
     for start in 1..len {
-        let value = input[start].clone();
-
         // Push item to correct place in list by swapping forward items greater than `value`
         for offset in 1..=start {
-            if input[start - offset] > value {
+            if input[start - offset] > input[start - offset + 1] {
                 input.swap(start - offset, start - offset + 1)
             }
         }
